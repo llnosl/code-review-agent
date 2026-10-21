@@ -27,3 +27,13 @@ management:
 
 agent:
   base-url: ${AGENT_BASE_URL:http://localhost:3001}
+  review-path: ${AGENT_REVIEW_PATH:/api/reviews}
+
+review:
+  submission-dispatch:
+    interval-millis: ${REVIEW_SUBMISSION_INTERVAL_MILLIS:1000}
+    batch-size: ${REVIEW_SUBMISSION_BATCH_SIZE:20}
+    lease-duration: ${REVIEW_SUBMISSION_LEASE_DURATION:PT1M}
+    max-attempts: ${REVIEW_SUBMISSION_MAX_ATTEMPTS:8}
+    initial-retry-delay: ${REVIEW_SUBMISSION_INITIAL_RETRY_DELAY:PT5S}
+    max-retry-delay: ${REVIEW_SUBMISSION_MAX_RETRY_DELAY:PT10M}

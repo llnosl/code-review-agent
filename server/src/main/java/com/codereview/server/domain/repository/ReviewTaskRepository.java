@@ -1,6 +1,8 @@
 package com.codereview.server.domain.repository;
 
 import com.codereview.server.domain.model.ReviewTask;
+import java.util.Optional;
+import java.util.UUID;
 
 /**
  * 审查任务存储接口。
@@ -8,7 +10,7 @@ import com.codereview.server.domain.model.ReviewTask;
 public interface ReviewTaskRepository {
 
     /**
-     * 保存审查任务。
+     * 按标识查询审查任务。
      */
-    void save(ReviewTask reviewTask);
+    Optional<ReviewTask> findById(UUID reviewTaskId);
 }
